@@ -2,16 +2,21 @@ name: learn GA
 
 on: [push]
 
-jobs: 
-    run-shell-command: 
-      runs-on: ubuntu-latest
-      steps: 
-        - name: echo a string
-          run: echo "Hello World"
-        - name: echo current directory
-          run: ls ./
-        - name: multiline script
-          run: |
-            node -v
-            npm -v
-        
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: echo a string
+        run: echo "Hello World"
+      - name: echo current directory
+        run: ls ./
+      - name: multiline script
+        run: |
+          node -v
+          npm -v
+
+      - name: python Command  # python shell supported, but
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python # needs to specify here to run this COMMAND specific in this shell
