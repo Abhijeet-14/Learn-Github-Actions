@@ -23,7 +23,7 @@ jobs:
 
   run-windows-command: # Jobs name - for JOB group
     runs-on: windows-latest
-    needs: ["runs-shell-command"]  # windows won't run UNTIL run-shell COMPLETE
+    needs: ["run-shell-command"]  # windows won't run UNTIL run-shell COMPLETE
     steps:
       - name: Directory Porweshell
         run: Get-Location
