@@ -20,3 +20,13 @@ jobs:
           import platform
           print(platform.processor())
         shell: python # needs to specify here to run this COMMAND specific in this shell
+
+  run-windows-command:
+    runs-on: windows-latest
+    steps:
+      - name: Directory Porweshell
+        run: Get-Location
+
+      - name: Directory Bash
+        run: pwd
+        shell: bash
