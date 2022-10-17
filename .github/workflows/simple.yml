@@ -3,7 +3,7 @@ name: learn GA
 on: [push]
 
 jobs:
-  run-shell-command:
+  run-shell-command: # Jobs name - for JOB group
     runs-on: ubuntu-latest 
     steps:
       - name: echo a string
@@ -21,8 +21,9 @@ jobs:
           print(platform.processor())
         shell: python # needs to specify here to run this COMMAND specific in this shell
 
-  run-windows-command:
+  run-windows-command: # Jobs name - for JOB group
     runs-on: windows-latest
+    needs: ["runs-shell-command"]  # windows won't run UNTIL run-shell COMPLETE
     steps:
       - name: Directory Porweshell
         run: Get-Location
